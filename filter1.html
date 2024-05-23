@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    
+    .mainbox{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: flex-start;
+    }
+    .card{
+        height:300px;
+        width:300px;
+        margin:1%;
+        padding:1%;
+    }
+    .card img{
+        height:250px;
+        width:100%;
+    }
+</style>
+<body>
+    <form action="">
+        <input type="number" placeholder="Enter Min Value" id="minVal"/>
+        <input type="number" placeholder="Enter Max Value" id="maxVal"/>
+        <input type="button" class="submit" value="filter"/>
+    </form>
+    <div class="container mainbox">
+        <div class="card parent" data-value="5000">
+            <img src="https://assets.myntassets.com/dpr_1.5,q_60,w_400,c_limit,fl_progressive/assets/images/11530774/2020/2/25/defd6b5c-c167-4f90-b692-3a9914eb55a91582633959928-anayna-Beige--Golden-Kota-Doriya-Block-Printed-Dupatta-95715-1.jpg" />
+            <p>₹5000</p>
+        </div>
+        <div class="card parent" data-value="6000">
+            <img src="https://img.faballey.com/images/Product/RCD00035Z/1.jpg" />
+            <p>₹6000</p>
+        </div>
+        <div class="card parent" data-value="1500">
+            <img src="https://prathamexports.com/images/product/sub_images/2023/06/nayla-pravya-stylish-look-designer-dress-online-supplier-surat-0-2023-06-01_14_35_42.jpg" />
+            <p>₹1500</p>
+        </div>
+        <div class="card parent" data-value="4000">
+            <img src="https://cdn.sareeka.com/image/cache/data2023/brown-weaving-cotton-lehenga-choli-268050-1000x1375.jpg" />
+            <p>₹4000</p>
+        </div>
+        <div class="card parent" data-value="3500">
+            <img src="https://rukminim2.flixcart.com/image/850/1000/xif0q/lehenga-choli/u/k/c/free-half-sleeve-zc-86-jeq-aatvi-original-imagpgzjfm2nwgjk.jpeg?q=90&crop=false"/>
+            <p>₹3500</p>
+        </div>
+        <div class="card parent" data-value="10000">
+            <img src="https://i.pinimg.com/564x/cd/90/ad/cd90ad1105ab8b20b8f42bb32d84ec3a.jpg" />
+            <p>₹10000</p>
+        </div>
+        <div class="card parent" data-value="5500">
+            <img src="https://rukminim1.flixcart.com/image/850/1000/xif0q/shopsy-dress/1/r/e/xxl-belt-brown-xl-divine-creation-studio-original-imagshzj7x3u2zvf.jpeg?q=90&crop=false" />
+            <p>₹5500</p>
+        </div>
+        <div class="card parent" data-value="6500">
+            <img src="https://i.pinimg.com/564x/cc/bc/7d/ccbc7d0bd5dfb23af2c9bc5c2a07bc92.jpg" />
+            <p>₹6500</p>
+        </div>
+    </div>
+    <a href="women.html"><button class="btn btn-outline-success">Back To Womens Wear</button></a>
+    <script>
+        subBtn=document.querySelector('.submit');
+    
+        let dataValue=document.querySelectorAll('.parent');
+        dataValue.forEach(function(Items){
+    
+            subBtn.addEventListener('click',function(){
+                let min=document.getElementById("minVal").value;
+                let max=document.getElementById("maxVal").value;
+                minPI=parseInt(min);
+                maxPI=parseInt(max);
+    
+                let dataItems=Items.getAttribute('data-value');
+                if(dataItems>=minPI && dataItems<=maxPI){
+                    Items.style.display="block";
+                }
+                else{
+                    Items.style.display="none";
+                }
+            })
+        })
+
+        </script>
+</body>
+</html>

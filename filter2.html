@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .mainbox{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: flex-start;
+    }
+    .card{
+        height:300px;
+        width:300px;
+        margin:1%;
+        padding:1%;
+    }
+    .card img{
+        height:250px;
+        width:100%;
+    }
+</style>
+<body>
+    <form action="">
+        <input type="number" placeholder="Enter Min Value" id="minVal"/>
+        <input type="number" placeholder="Enter Max Value" id="maxVal"/>
+        <input type="button" class="submit" value="filter"/>
+    </form>
+    <div class="mainbox">
+        <div class="card parent" data-value="3000">
+            <img src="https://i.pinimg.com/236x/89/d9/20/89d9202ca81e5cf7e80a37555b62b128.jpg" />
+            <p>₹3000</p>
+        </div>
+        <div class="card parent" data-value="5000">
+            <img src="https://i.pinimg.com/236x/07/8d/46/078d46d87f04065a0e27d5219a408821.jpg" />
+            <p>₹5000</p>
+        </div>
+        <div class="card parent" data-value="4000">
+            <img src="https://i.pinimg.com/736x/50/bc/46/50bc46f3ef15f87419483d9e7c5cce60.jpg" />
+            <p>₹3000</p>
+        </div>
+        <div class="card parent" data-value="2500">
+            <img src="https://www.nextdirect.com/nxtcms/resource/blob/5821504/ee0fc6a294be647924fa5f5e7e3df8e9/hoodies-data.jpg" />
+            <p>₹2500</p>
+        </div>
+        <div class="card parent" data-value="8000">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3QtLUOP4egq-LnCZ8qNBUrDTU2UL0mGAXqkEFALmeUKtrR0F8GypyeVoj93Xq4T5nZss&usqp=CAU"/>
+            <p>₹8000</p>
+        </div>
+        <div class="card parent" data-value="7000">
+            <img src="https://medias.utsavfashion.com/media/catalog/product/cache/1/small_image/295x/040ec09b1e35df139433887a97daa66f/e/m/embroidered-art-silk-jodhpuri-suit-in-cream-v1-mly1783.jpg" />
+            <p>₹7000</p>
+        </div>
+        <div class="card parent" data-value="9000">
+            <img src="https://i.pinimg.com/736x/e3/6f/d3/e36fd32a0198df3338c39f1a247e5c61.jpg"/>
+            <p>₹9000</p>
+        </div>
+        <div class="card parent" data-value="6500">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZUIRnmTK7IqoPL8UMgFtxO_AkBKD7_8xnZd5GUhH_VGIKfyGRlfkgywTomJyhMbVe8W8&usqp=CAU"/>
+            <p>₹6500</p>
+        </div>
+    </div>
+    <a href="men.html"><button class="btn btn-outline-success">Back To Mens Wear</button></a>
+    <script>
+        subBtn=document.querySelector('.submit');
+    
+        let dataValue=document.querySelectorAll('.parent');
+        dataValue.forEach(function(Items){
+    
+            subBtn.addEventListener('click',function(){
+                let min=document.getElementById("minVal").value;
+                let max=document.getElementById("maxVal").value;
+                minPI=parseInt(min);
+                maxPI=parseInt(max);
+    
+                let dataItems=Items.getAttribute('data-value');
+                if(dataItems>=minPI && dataItems<=maxPI){
+                    Items.style.display="block";
+                }
+                else{
+                    Items.style.display="none";
+                }
+            })
+        })
+        </script>
+</body>
+</html
